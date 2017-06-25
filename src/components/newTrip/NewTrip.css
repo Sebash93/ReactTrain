@@ -1,0 +1,6 @@
+.newTripForm label {
+    display: block;
+}
+.newTripForm input[type="text"] {
+    display: block;
+}
