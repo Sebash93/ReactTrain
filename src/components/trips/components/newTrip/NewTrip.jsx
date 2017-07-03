@@ -4,7 +4,7 @@ import styles from './NewTrip.css'
 export class NewTrip extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {driver: "", from: "", to: "", passBy: ""}
+        this.state = {driver: "Sebas", from: "RutaN", to: "Envigado", passBy: "Autopista Sur"}
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,11 +15,15 @@ export class NewTrip extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log("This is the state", this.state);
-        let {driver, from, to, passBy} = this.state;
-        this.props.onNewTrip({driver, from, to, passBy})
-        debugger
+        console.log("Send to Creat", this.state);
         event.preventDefault();
+        let trip = {
+            driver: this.state.driver, 
+            from: this.state.from, 
+            to: this.state.to, 
+            passBy: this.state.passBy
+        };
+        this.props.onNewTrip(trip)
     }
 
     render() {
